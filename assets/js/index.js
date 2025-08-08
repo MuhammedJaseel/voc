@@ -50,10 +50,10 @@ contactForm.onsubmit = (e) => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Server responded with:", data);
+        // console.log("Server responded with:", data);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        // console.error("Error:", error);
       });
   } else {
     alert("Please fill in all required fields.");
