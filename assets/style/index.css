@@ -92,7 +92,7 @@ button {
 }
 .bAbBb {
   width: calc(50% - 10px);
-  height: 180px;
+  height: 200px;
   position: relative;
   color: white;
   display: flex;
@@ -128,9 +128,10 @@ button {
   box-sizing: border-box;
   font-weight: 600;
   cursor: pointer;
+  font-size: 20px;
 }
 .bAbBbA div {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 200;
 }
 .bAbBbA::after {
@@ -261,7 +262,6 @@ button {
 }
 .cAb input,
 .cAb textarea {
-  width: 100%;
   padding: 10px;
   border: 1px solid #d3d3d3;
   border-radius: 4px;
