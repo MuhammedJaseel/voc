@@ -35,6 +35,7 @@ contactForm.onsubmit = (e) => {
   const phone = e.target.f1_phone.value;
   const email = e.target.f1_email.value;
   const note = e.target.f1_note.value;
+  const date = Date().toString();
 
   if (name && phone) {
     alert(`Thank you ${name}, we will contact you soon!`);
@@ -44,7 +45,7 @@ contactForm.onsubmit = (e) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Note: ${note}<br/>`,
+        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Note: ${note}<br/>${date}`,
       }),
     })
       .then((response) => response.json())
@@ -64,6 +65,7 @@ talkForm.onsubmit = (e) => {
   const name = e.target.f2_name.value;
   const phone = e.target.f2_phone.value;
   const email = e.target.f2_email.value;
+  const date = Date().toString();
 
   if (name && phone) {
     alert(`Thank you ${name}, we will contact you soon for ${selectedPurpus}!`);
@@ -73,7 +75,7 @@ talkForm.onsubmit = (e) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>`,
+        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>${date}`,
       }),
     })
       .then((response) => response.json())
