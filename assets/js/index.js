@@ -118,6 +118,3 @@ fb.onclick = () => {
     "_blank"
   );
 };
-mail.onclick = () => {
-  alert("mail");
-};
