@@ -43,12 +43,31 @@ button {
   height: 90px;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   padding: 0 8%;
   z-index: 2;
   background-color: white;
 }
 .a img {
   width: 120px;
+}
+.aA {
+  display: flex;
+  gap: 8px;
+}
+.aA div {
+  padding: 12px 16px;
+  font-weight: 600;
+  background-color: #d3d3d3;
+  border-radius: 20px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .aA div {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
 }
 /* ----------------------------------------------------------------------------- */
 .b {
@@ -192,6 +211,48 @@ button {
   padding-right: 24px;
 }
 .bB {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 90vh;
+  top: -100vh;
+  transition: top 0.5s;
+  box-shadow: 20px 0 40px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8%;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 18% 8%;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.bBa {
+  min-width: 300px;
+  max-width: 36vw;
+}
+.bBa h1 {
+  font-weight: 600;
+}
+.bBa h2 {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.8;
+}
+.bBb {
+  position: absolute;
+  bottom: 5%;
+  left: calc(50% - 20px);
+  height: 24px;
+  width: 24px;
+  padding: 16px;
+  box-shadow: -1px 2px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transform: rotate(-90deg);
+  cursor: pointer;
+}
+.bD {
   height: 90px;
   background-color: #f7f7f7;
   box-sizing: border-box;
@@ -201,7 +262,7 @@ button {
   justify-content: flex-end;
   gap: 8px;
 }
-.bB div {
+.bD div {
   width: 36px;
   height: 36px;
   border-radius: 50%;
@@ -211,16 +272,16 @@ button {
   background-repeat: no-repeat;
   cursor: pointer;
 }
-.bB #wa {
+.bD #wa {
   background-image: url(../icons/wa.svg);
 }
-.bB #insta {
+.bD #insta {
   background-image: url(../icons/insta.svg);
 }
-.bB #fb {
+.bD #fb {
   background-image: url(../icons/fb.svg);
 }
-.bB #mail {
+.bD #mail {
   background-image: url(../icons/fb.svg);
 }
 /* ////////////////////////////////////////////////////////////////////////////////// */

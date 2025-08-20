@@ -91,6 +91,13 @@ talkForm.onsubmit = (e) => {
 };
 
 // //////////////////////////////////////////////////////////////////
+upDownDrowerBtn.onclick = () => {
+  upDownDrower.style.top = "0px";
+};
+upDownDrowerClose.onclick = () => {
+  upDownDrower.style.top = "-100%";
+};
+// //////////////////////////////////////////////////////////////////
 bAaC.onclick = () => {
   contactPop.style.display = "flex";
 };
