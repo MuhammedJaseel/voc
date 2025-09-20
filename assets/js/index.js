@@ -93,9 +93,11 @@ talkForm.onsubmit = (e) => {
 // //////////////////////////////////////////////////////////////////
 upDownDrowerBtn.onclick = () => {
   upDownDrower.style.top = "0px";
+  upDownDrowerClose.style.display = "block";
 };
 upDownDrowerClose.onclick = () => {
   upDownDrower.style.top = "-100%";
+  upDownDrowerClose.style.display = "none";
 };
 // //////////////////////////////////////////////////////////////////
 bAaC.onclick = () => {

@@ -261,7 +261,8 @@ button {
   }
 }
 .bBb {
-  position: absolute;
+  display: none;
+  position: fixed;
   bottom: 5%;
   left: calc(50% - 20px);
   height: 24px;
