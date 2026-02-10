@@ -15,9 +15,13 @@ interior.onclick = () => {
   talkPop.style.display = "flex";
   selectedPurpus = "Interior";
 };
-products.onclick = () => {
-  // talkPop.style.display = "flex";
+joinTeam.onclick = () => {
+  joinTeamPop.style.display = "flex";
+  selectedPurpus = "Join Team";
 };
+// products.onclick = () => {
+  // talkPop.style.display = "flex";
+// };
 
 talkPop.onclick = () => {
   talkPop.style.display = "none";
@@ -26,6 +30,16 @@ talkPopClose.onclick = () => {
   talkPop.style.display = "none";
 };
 talkPopBody.onclick = (e) => {
+  e.stopPropagation();
+};
+
+joinTeamPop.onclick = () => {
+  joinTeamPop.style.display = "none";
+};
+joinTeamPopClose.onclick = () => {
+  joinTeamPop.style.display = "none";
+};
+joinTeamPopBody.onclick = (e) => {
   e.stopPropagation();
 };
 
@@ -90,6 +104,36 @@ talkForm.onsubmit = (e) => {
   }
 };
 
+joinTeamForm.onsubmit = (e) => {
+  e.preventDefault();
+  const name = e.target.f3_name.value;
+  const phone = e.target.f3_phone.value;
+  const email = e.target.f3_email.value;
+  const date = Date().toString();
+
+  if (name && phone) {
+    alert(`Thank you ${name}, we will contact you soon for ${selectedPurpus}!`);
+    talkPop.style.display = "none";
+    joinTeamForm.reset();
+    fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>${date}`,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // console.log("Server responded with:", data);
+      })
+      .catch((error) => {
+        // console.error("Error:", error);
+      });
+  } else {
+    alert("Please fill in all required fields.");
+  }
+};
+
 // //////////////////////////////////////////////////////////////////
 upDownDrowerBtn.onclick = () => {
   upDownDrower.style.top = "0px";
@@ -124,6 +168,6 @@ insta.onclick = () => {
 fb.onclick = () => {
   window.open(
     "https://www.facebook.com/share/175BAMMF8p/?mibextid=wwXIfr",
-    "_blank"
+    "_blank",
   );
 };

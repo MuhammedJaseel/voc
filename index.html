@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -72,17 +72,29 @@
                 <div>Art of turning empty spaces into meaningful stories.</div>
               </div>
             </div>
-            <div class="bAbBb" id="products">
+            <div class="bAbBb" id="joinTeam">
               <img
-                src="./assets/images/4.webp"
+                src="./assets/images/join-team.webp"
                 alt="Products"
                 fetchpriority="high"
               />
               <div class="bAbBbA">
+                Join our community
+                <div>
+                  Join our community to share ideas and grow alongside fellow
+                  innovators.
+                </div>
+              </div>
+              <!-- <img
+                src="./assets/images/4.webp"
+                alt="Products"
+                fetchpriority="high"
+              /> -->
+              <!-- <div class="bAbBbA">
                 Products
                 <div>Make your home beautiful with VOC.</div>
               </div>
-              <div class="commingSoon">Comming Soon</div>
+              <div class="commingSoon">Comming Soon</div> -->
             </div>
           </div>
         </div>
@@ -144,7 +156,12 @@
       <div class="cA" id="contactPopBody">
         <div class="cAa">
           Contact Us
-          <img src="./assets/icons/x.svg" alt="close" id="contactPopClose" />
+          <img
+            style="cursor: pointer"
+            src="./assets/icons/x.svg"
+            alt="close"
+            id="contactPopClose"
+          />
         </div>
         <form class="cAb" id="contactForm">
           <label>Enter your name *</label>
@@ -163,7 +180,12 @@
       <div class="cA" id="talkPopBody">
         <div class="cAa">
           Talk With Designer
-          <img src="./assets/icons/x.svg" alt="close" id="talkPopClose" />
+          <img
+            style="cursor: pointer"
+            src="./assets/icons/x.svg"
+            alt="close"
+            id="talkPopClose"
+          />
         </div>
         <form class="cAb" id="talkForm">
           <label>Enter your name *</label>
@@ -172,6 +194,28 @@
           <input id="f2_phone" type="text" placeholder="95xxxxxx63" required />
           <label>Enter your email (optional)</label>
           <input id="f2_email" type="email" placeholder="example@gmail.com" />
+          <button>Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="c" id="joinTeamPop">
+      <div class="cA" id="joinTeamPopBody">
+        <div class="cAa">
+          Join Our Community
+          <img
+            style="cursor: pointer"
+            src="./assets/icons/x.svg"
+            alt="close"
+            id="joinTeamPopClose"
+          />
+        </div>
+        <form class="cAb" id="joinTeamForm">
+          <label>Enter your name *</label>
+          <input id="f3_name" type="text" placeholder="Name" required />
+          <label>Enter your phone number *</label>
+          <input id="f3_phone" type="text" placeholder="95xxxxxx63" required />
+          <label>Enter your email (optional)</label>
+          <input id="f3_email" type="email" placeholder="example@gmail.com" />
           <button>Submit</button>
         </form>
       </div>

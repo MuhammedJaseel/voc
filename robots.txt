@@ -2,3 +2,4 @@
 # Block all web crawlers from the entire site
 
 User-agent: *
+Allow: /
