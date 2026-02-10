@@ -19,9 +19,6 @@ joinTeam.onclick = () => {
   joinTeamPop.style.display = "flex";
   selectedPurpus = "Join Team";
 };
-// products.onclick = () => {
-//   talkPop.style.display = "flex";
-// };
 
 talkPop.onclick = () => {
   talkPop.style.display = "none";
