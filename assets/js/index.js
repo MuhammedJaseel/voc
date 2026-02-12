@@ -1,3 +1,26 @@
+const logAccess = async () => {
+  try {
+    let logId = localStorage.getItem("logId");
+
+    if (!logId) logId = "new";
+    else if (logId?.length !== 24) logId = "new";
+
+    const url = `https://api.anolabs.site/acces-status/${logId}/voc`;
+
+    const response = await fetch(url, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const data = await response.json();
+    localStorage.setItem("logId", data.id);
+  } catch (err) {
+    console.error("Error logging access:", err);
+  }
+};
+
+logAccess();
+
 VOC.onclick = () => {
   window.open("https://vocindia.net", "_self");
 };
