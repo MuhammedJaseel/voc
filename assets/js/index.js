@@ -45,19 +45,27 @@ contactForm.onsubmit = (e) => {
   const name = e.target.f1_name.value;
   const phone = e.target.f1_phone.value;
   const email = e.target.f1_email.value;
-  const note = e.target.f1_note.value;
-  const date = Date().toString();
+  const msg = e.target.f1_note.value;
+  // const date = Date().toString();
 
   if (name && phone) {
     alert(`Thank you ${name}, we will contact you soon!`);
     contactPop.style.display = "none";
     contactForm.reset();
-    fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+    // fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Note: ${note}<br/>${date}`,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => { })
+    //   .catch((error) => { });
+    fetch("https://api.vocindia.net/api/public/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Note: ${note}<br/>${date}`,
-      }),
+      body: JSON.stringify({ name, phone, email, msg }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -76,18 +84,26 @@ talkForm.onsubmit = (e) => {
   const name = e.target.f2_name.value;
   const phone = e.target.f2_phone.value;
   const email = e.target.f2_email.value;
-  const date = Date().toString();
+  // const date = Date().toString();
 
   if (name && phone) {
     alert(`Thank you ${name}, we will contact you soon for ${selectedPurpus}!`);
     talkPop.style.display = "none";
     talkForm.reset();
-    fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+    // fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>${date}`,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => { })
+    //   .catch((error) => { });
+    fetch("https://api.vocindia.net/api/public/enquiry", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>${date}`,
-      }),
+      body: JSON.stringify({ name, phone, email, msg: selectedPurpus }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -106,18 +122,28 @@ joinTeamForm.onsubmit = (e) => {
   const name = e.target.f3_name.value;
   const phone = e.target.f3_phone.value;
   const email = e.target.f3_email.value;
-  const date = Date().toString();
+  // const date = Date().toString();
 
   if (name && phone) {
-    alert(`Thank you ${name}, we will contact you soon for ${selectedPurpus}!`);
+    alert(
+      `Thank you ${name}, we will contact you soon for join our community!`,
+    );
     talkPop.style.display = "none";
     joinTeamForm.reset();
-    fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+    // fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
+    //   method: "POST",
+    //   headers: { "Content-Type": "application/json" },
+    //   body: JSON.stringify({
+    //     message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>${date}`,
+    //   }),
+    // })
+    //   .then((response) => response.json())
+    //   .then((data) => { })
+    //   .catch((error) => { });
+    fetch("https://api.vocindia.net/api/public/join-team", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: `Name: ${name}<br/>Phone: ${phone}<br/>Email: ${email}<br/>Purpose: ${selectedPurpus}<br/>${date}`,
-      }),
+      body: JSON.stringify({ name, phone, email, msg: "Join Community" }),
     })
       .then((response) => response.json())
       .then((data) => {
