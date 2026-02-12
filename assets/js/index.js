@@ -128,7 +128,7 @@ joinTeamForm.onsubmit = (e) => {
     alert(
       `Thank you ${name}, we will contact you soon for join our community!`,
     );
-    talkPop.style.display = "none";
+    joinTeamPop.style.display = "none";
     joinTeamForm.reset();
     // fetch("https://my-mailer-taupe.vercel.app/voc/send-email", {
     //   method: "POST",
